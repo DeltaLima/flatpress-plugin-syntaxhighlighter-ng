@@ -29,7 +29,7 @@ function plugin_syntaxhighlighter_head() {
 echo <<<PRISMJS
 	<!-- start of prism.js -->
 		
-  <link rel="stylesheet" type="text/css" href="{$pdir}res/prism.css" />
+  <link rel="stylesheet" type="text/css" href="{$pdir}res/prism.okaidia.css" />
 
 	<!-- end of prism.js -->
 PRISMJS;
@@ -49,7 +49,7 @@ function plugin_syntaxhighlighter_foot() {
 	echo <<<PRISMBOX
 	<!-- start of prism.js -->
     
-    <script type="text/javascript" src="{$pdir}res/prism.js"></script>
+    <script type="text/javascript" src="{$pdir}res/prism.full.js"></script>
     
     <!-- wrapping the content of pre html-tags into code-tags, as said in https://prismjs.com/index.html#basic-usage -->
     <script type="text/javascript">
@@ -61,14 +61,24 @@ function plugin_syntaxhighlighter_foot() {
             // split used_languages list into array
             let used_languages = $used_languages;
             
+            // iterate through all used_languages
             for (let iUl = 0;iUl < used_languages.length; iUl++)
             {
-              // do nothing on empty element
-              if ( used_languages[iUl] != "" ) 
+              // handle [code] without language definition as "none"
+              // and we have to look for them up a bit different
+              if ( used_languages[iUl] == "" ) 
               {
-                // get all <pre> elements with certain language
-                let preElements = document.querySelectorAll("pre." + used_languages[iUl]);
+              
+                used_languages[iUl] == "none"
+                var preElements = document.querySelectorAll("pre:not([class])");
+              
+              } else {
+              
+                var preElements = document.querySelectorAll("pre." + used_languages[iUl]);
+              
+              }
                 
+                // iterate through all <pre> 
                 for (let iEl = 0;iEl < preElements.length; iEl++)
                 {
                   org_html = preElements[iEl].innerHTML;
@@ -76,25 +86,11 @@ function plugin_syntaxhighlighter_foot() {
                   
                   preElements[iEl].innerHTML = new_html;
                 }
-              }
+              
             }
-            
-            
-            
-            /* for(let iEl = 0;iEl < preEl.length; iEl++)
-            {
-              //ShowResults(input[iEl].value);
-              //alert(preEl[iEl].innerHTML);
-              
-              org_html = preEl[iEl].innerHTML;
-              new_html = "<code class=\"language\">" + org_html + "</code>";
-              preEl[iEl].innerHTML = new_html;
-              
-            } */
-            
     </script>
 	
-	<!-- end of SHL -->
+	<!-- end of prism.js -->
 PRISMBOX;
 }
 add_action('wp_footer', 'plugin_syntaxhighlighter_foot');
