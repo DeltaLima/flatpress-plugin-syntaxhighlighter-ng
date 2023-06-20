@@ -27,11 +27,11 @@ function plugin_syntaxhighlighter_add($lang=null) {
 function plugin_syntaxhighlighter_head() {
 	$pdir=plugin_geturl('syntaxhighlighter');
 echo <<<PRISMJS
-	<!-- start of prism.js -->
+	<!-- start of prism.js header -->
 		
   <link rel="stylesheet" type="text/css" href="{$pdir}res/prism.okaidia.css" />
 
-	<!-- end of prism.js -->
+	<!-- end of prism.js header -->
 PRISMJS;
 	
 }
@@ -47,7 +47,7 @@ function plugin_syntaxhighlighter_foot() {
 	$pdir=plugin_geturl('syntaxhighlighter');
   // javascript part
 	echo <<<PRISMBOX
-	<!-- start of prism.js -->
+	<!-- start of prism.js footer -->
     
     <script type="text/javascript" src="{$pdir}res/prism.full.js"></script>
     
@@ -90,7 +90,7 @@ function plugin_syntaxhighlighter_foot() {
             }
     </script>
 	
-	<!-- end of prism.js -->
+	<!-- end of prism.js footer -->
 PRISMBOX;
 }
 add_action('wp_footer', 'plugin_syntaxhighlighter_foot');
