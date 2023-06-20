@@ -1,5 +1,7 @@
 # syntaxhighlighter-ng
 
+Origin: https://git.la10cy.net/DeltaLima/flatpress-plugin-syntaxhighlighter-ng
+
 based on the original FlatPress plugin [from 2005](https://forum.flatpress.org/viewtopic.php?p=1130&hilit=syntax+highlight#p1135), updated in 2023 to prism.js
 
 ## installation
