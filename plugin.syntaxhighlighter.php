@@ -100,30 +100,41 @@ function plugin_syntaxhighlighter_foot() {
             // wrap the content of <pre> elements into <code></code> for prismjs
             
             // get an array of pre elements 
-            var preEl = document.getElementsByTagName("pre");
+            //var preEl = document.getElementsByTagName("pre");
             
             // split used_languages list into array
             let used_languages = $used_languages;
             
             for (let iUl = 0;iUl < used_languages.length; iUl++)
             {
+              // do nothing on empty elements
               if ( used_languages[iUl] != "" ) 
               {
                 alert(used_languages[iUl]);
+                let preElements = document.querySelectorAll("pre." + used_languages[iUl]);
+                
+                for (let iEl = 0;iEl < preElements.length; iEl++)
+                {
+                  org_html = preElements[iEl].innerHTML;
+                  new_html = "<code class=\"language-" + used_languages[iUl] + "\">" + org_html + "</code>";
+                  alert(new_html);
+                  preElements[iEl].innerHTML = new_html;
+                }
               }
             }
             
             
             
-            for(let iEl = 0;iEl < preEl.length; iEl++)
+            /* for(let iEl = 0;iEl < preEl.length; iEl++)
             {
               //ShowResults(input[iEl].value);
               //alert(preEl[iEl].innerHTML);
+              
               org_html = preEl[iEl].innerHTML;
               new_html = "<code class=\"language\">" + org_html + "</code>";
               preEl[iEl].innerHTML = new_html;
               
-            }
+            } */
             
     </script>
 	
