@@ -2,6 +2,14 @@
 
 based on the original FlatPress plugin [from 2005](https://forum.flatpress.org/viewtopic.php?p=1130&hilit=syntax+highlight#p1135), updated in 2023 to prism.js
 
+## installation
+
+Put the plugin files into `fp-plugins/syntaxhighlighter/`. If you want to git clone it, use
+
+```
+[fp-plugins/]$ git clone https://git.la10cy.net/DeltaLima/flatpress-plugin-syntaxhighlighter-ng.git syntaxhighlighter/
+```
+
 ## codeblock with language syntax highlightning
 
 When you just create an `[code][/code]` block, then there will be no syntax highlightning.
