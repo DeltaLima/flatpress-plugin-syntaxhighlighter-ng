@@ -49,7 +49,7 @@ function plugin_syntaxhighlighter_foot() {
 	echo <<<PRISMBOX
 	<!-- start of prism.js footer -->
     
-    <script type="text/javascript" src="{$pdir}res/prism.small.js"></script>
+    <script type="text/javascript" src="{$pdir}res/prism.full.js"></script>
     
     <!-- wrapping the content of pre html-tags into code-tags, as said in https://prismjs.com/index.html#basic-usage -->
     <script type="text/javascript">
@@ -82,7 +82,7 @@ function plugin_syntaxhighlighter_foot() {
                 for (let iEl = 0;iEl < preElements.length; iEl++)
                 {
                   org_html = preElements[iEl].innerHTML;
-                  new_html = "<code class=\"language-" + used_languages[iUl] + "\">" + org_html + "</code>";
+                  new_html = "<code class=\"line-numbers language-" + used_languages[iUl] + "\">" + org_html + "</code>";
                   
                   preElements[iEl].innerHTML = new_html;
                 }
