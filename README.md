@@ -6,7 +6,7 @@ based on the original FlatPress plugin [from 2005](https://forum.flatpress.org/v
 
 Put the plugin files into `fp-plugins/syntaxhighlighter/`. If you want to git clone it, use
 
-```
+```shell
 [fp-plugins/]$ git clone https://git.la10cy.net/DeltaLima/flatpress-plugin-syntaxhighlighter-ng.git syntaxhighlighter/
 ```
 
