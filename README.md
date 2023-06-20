@@ -30,15 +30,28 @@ JSON, Makefile, Markdown, nginx, Perl, PHP, PowerShell, Python, Ruby
 Shell session, SQL, VB.Net, Wiki markup, YML
 ```
 
-To change the theme, your favorite from https://prismjs.com and place it into `fp-plugins/syntaxhighlighter/res/`.
-Then look after the block `<!-- start of prism.js header -->` in `fp-plugins/syntaxhighlighter/plugin.syntaxhighlighter.php` and change the following line:
+To use it (it is just 100KB instead of >500KB), you have look after 
+`	<!-- start of prism.js footer -->` in `syntaxhighlighter/plugin.syntaxhighlighter.php` and change the line
 
+```html
+    <script type="text/javascript" src="{$pdir}res/prism.full.js"></script>
 ```
+
+into 
+
+```html
+    <script type="text/javascript" src="{$pdir}res/prism.small.js"></script>
+```
+
+To change the theme, take your favorite from https://prismjs.com and place it into `syntaxhighlighter/res/`.
+Then look after the block `<!-- start of prism.js header -->` in `syntaxhighlighter/plugin.syntaxhighlighter.php` and change the following line:
+
+```html
 <link rel="stylesheet" type="text/css" href="{$pdir}res/prism.okaidia.css" />
 ```
 
 to
 
-```
+```html
 <link rel="stylesheet" type="text/css" href="{$pdir}res/prism.YOURTHEMENAME.css" />
 ```
