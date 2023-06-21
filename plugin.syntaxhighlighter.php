@@ -28,6 +28,7 @@ SOFTWARE.
 
 */
 
+$config = include('config.php');
 
 function plugin_syntaxhighlighter_add($lang=null) {
 	static $languages = array();
@@ -49,7 +50,7 @@ function plugin_syntaxhighlighter_head() {
 echo <<<PRISMJS
 	<!-- start of prism.js header -->
 		
-  <link rel="stylesheet" type="text/css" href="{$pdir}res/prism.okaidia.css" />
+  <link rel="stylesheet" type="text/css" href="{$pdir}res/prism-$config['theme'].css" />
 
 	<!-- end of prism.js header -->
 PRISMJS;
@@ -70,7 +71,7 @@ function plugin_syntaxhighlighter_foot() {
   echo <<<PRISMBOX
     <!-- start of prism.js footer -->
     
-    <script type="text/javascript" src="{$pdir}res/prism.small.js"></script>
+    <script type="text/javascript" src="{$pdir}res/prism.$config['size'].js"></script>
     
     <!-- include wrapping-function to wrap content of pre html-tags into code-tags, as said in https://prismjs.com/index.html#basic-usage -->
     <script type="text/javascript" src="{$pdir}res/syntaxhighlighter-ng.js"></script>
