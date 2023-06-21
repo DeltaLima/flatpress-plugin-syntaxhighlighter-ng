@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: SyntaxHighlighter-NG
-Version: 1.0.1
+Version: 1.0.2
 Plugin URI: https://git.la10cy.net/DeltaLima/flatpress-plugin-syntaxhighlighter-ng
 Description: <a href="https://git.la10cy.net/DeltaLima/flatpress-plugin-syntaxhighlighter-ng/">SyntaxHighlighter-NG</a> (forked from <a href="https://forum.flatpress.org/viewtopic.php?p=1130&hilit=syntax+highlight#p1135">Arvid's forum post</a>, using now <a href="https://prismjs.com">prism.js</a>)
 Author: 2005 NoWhereMan, 2023 DeltaLima
