@@ -70,7 +70,7 @@ function plugin_syntaxhighlighter_foot() {
   echo <<<PRISMBOX
     <!-- start of prism.js footer -->
     
-    <script type="text/javascript" src="{$pdir}res/prism.full.js"></script>
+    <script type="text/javascript" src="{$pdir}res/prism.small.js"></script>
     
     <!-- include wrapping-function to wrap content of pre html-tags into code-tags, as said in https://prismjs.com/index.html#basic-usage -->
     <script type="text/javascript" src="{$pdir}res/syntaxhighlighter-ng.js"></script>
