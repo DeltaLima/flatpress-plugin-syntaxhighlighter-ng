@@ -31,40 +31,39 @@ else
 fi
 [/code]
 ```
+For all language tags see https://prismjs.com/#supported-languages
+Not all listed languages are available by default, please see the configuration below!
 
-See the https://prismjs.com/#supported-languages for all supported languages by the contained `prism.full.js`
+# configuration
 
-The included `prism.small.js` just has the most popular I know:
+You can configure the used size of prismjs and it's theme. For that just edit `config.php` and set your favorite. 
 
+The default values are `small` for size (see available languages below) and `okaidia` for the theme.
+
+```php
+<?php
+/*
+ * size: tiny, small, full
+ *
+ * 	tiny: 21KB (Markup, HTML, XML, SVG, MathML, SSML, Atom, RSS, CSS, C-like, JavaScript)
+ *
+ *	small: 95KB (Markup, HTML, XML,SVG, MathML, SSML, Atom, RSS, CSS, C-Linke, JavaScript
+ *		     Apache, Bash, Batch, BBCode, C, C#, C++, CSV, Diff, Go, HTTP, ini, Java
+ *		     JSON, Makefile, Markdown, nginx, Perl, PHP, PowerShell, Python, Ruby
+ *		     Shell session, SQL, VB.Net, Wiki markup, YML)
+ *
+ *	full: 567KB (see https://prismjs.com/index.html#supported-languages for list of supported languages)
+ *
+ * theme: coy, dark, default, funky, okaidia, solarizedlight, tomorrow, twilight
+ * 	 
+ */
+
+return [
+	// change here
+	'size' => 'small',
+	'theme' => 'okaidia',
+
+]
+?>
 ```
-Markup, HTML, XML,SVG, MathML, SSML, Atom, RSS, CSS, C-Linke, JavaScript
-Apache, Bash, Batch, BBCode, C, C#, C++, CSV, Diff, Go, HTTP, ini, Java
-JSON, Makefile, Markdown, nginx, Perl, PHP, PowerShell, Python, Ruby
-Shell session, SQL, VB.Net, Wiki markup, YML
-```
 
-To use it (it is just 100KB instead of >500KB), you have look after 
-`	<!-- start of prism.js footer -->` in `syntaxhighlighter/plugin.syntaxhighlighter.php` and change the line
-
-```html
-    <script type="text/javascript" src="{$pdir}res/prism.full.js"></script>
-```
-
-into 
-
-```html
-    <script type="text/javascript" src="{$pdir}res/prism.small.js"></script>
-```
-
-To change the theme, take your favorite from https://prismjs.com and place it into `syntaxhighlighter/res/`.
-Then look after the block `<!-- start of prism.js header -->` in `syntaxhighlighter/plugin.syntaxhighlighter.php` and change the following line:
-
-```html
-<link rel="stylesheet" type="text/css" href="{$pdir}res/prism.okaidia.css" />
-```
-
-to
-
-```html
-<link rel="stylesheet" type="text/css" href="{$pdir}res/prism.YOURTHEMENAME.css" />
-```
