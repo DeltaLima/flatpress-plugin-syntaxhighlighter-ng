@@ -62,7 +62,6 @@ return [
 	// change here
 	'size' => 'small',
 	'theme' => 'okaidia',
-
 ]
 ?>
 ```
