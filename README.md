@@ -4,14 +4,15 @@ Origin: https://git.la10cy.net/DeltaLima/flatpress-plugin-syntaxhighlighter-ng
 
 Demo: https://deltalima.org/blog/index.php/syntaxhighlighter-ng-testpage/
 
-based on the original FlatPress plugin [from 2005](https://forum.flatpress.org/viewtopic.php?p=1130&hilit=syntax+highlight#p1135), updated in 2023 to prism.js
+based on the original FlatPress plugin [syntaxhighlighter from 2005](https://forum.flatpress.org/viewtopic.php?p=1130&hilit=syntax+highlight#p1135), updated in 2023 to prism.js
 
 ## installation
 
-Put the plugin files into `fp-plugins/syntaxhighlighter/`. If you want to git clone it, use
+Download the [latest release](https://git.la10cy.net/DeltaLima/flatpress-plugin-syntaxhighlighter-ng/releases) and extract `syntaxhighlighter-ng_v1.x.x.zip` to your `fp-plugins/` folder.
 
+If you want to use git, use
 ```shell
-[fp-plugins/]$ git clone https://git.la10cy.net/DeltaLima/flatpress-plugin-syntaxhighlighter-ng.git syntaxhighlighter/
+$ git clone https://git.la10cy.net/DeltaLima/flatpress-plugin-syntaxhighlighter-ng.git /pathto/flatpress/fp-plugins/syntaxhighlighter/
 ```
 
 ## codeblock with language syntax highlightning
