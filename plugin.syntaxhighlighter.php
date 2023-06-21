@@ -50,7 +50,7 @@ function plugin_syntaxhighlighter_head() {
 echo <<<PRISMJS
 	<!-- start of prism.js header -->
 		
-  <link rel="stylesheet" type="text/css" href="{$pdir}res/prism-$config['theme'].css" />
+  <link rel="stylesheet" type="text/css" href="{$pdir}res/prism-{$config['theme']}.css" />
 
 	<!-- end of prism.js header -->
 PRISMJS;
@@ -78,7 +78,7 @@ function plugin_syntaxhighlighter_foot() {
 
     <!-- call wrap_pre_tags() from syntaxhighlighter-ng.js -->
     <script type="text/javascript">
-      var used_languages = $used_languages;
+      var used_languages = {$used_languages};
       wrap_pre_tags(used_languages);
     </script>
 	
