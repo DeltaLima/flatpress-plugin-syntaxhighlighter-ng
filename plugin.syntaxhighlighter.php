@@ -68,6 +68,8 @@ function plugin_syntaxhighlighter_foot() {
 	// convert the returned array into a json one, to have an easier time
 	// giving it to the javascript below
 	$used_languages = json_encode(plugin_syntaxhighlighter_add());
+	// put configured plugins into an json array
+	$used_plugins = json_encode($config['plugins']);
 	
 	$pdir=plugin_geturl('syntaxhighlighter');
 	// javascript part
@@ -82,7 +84,8 @@ echo <<<PRISMBOX
 	<!-- call wrap_pre_tags() from syntaxhighlighter-ng.js -->
 	<script type="text/javascript">
 	  var used_languages = {$used_languages};
-	  wrap_pre_tags(used_languages);
+	  var used_languages = {$used_plugins};
+	  wrap_pre_tags(used_languages, used_plugins);
 	</script>
 	    
 	<!-- end of prism.js footer -->

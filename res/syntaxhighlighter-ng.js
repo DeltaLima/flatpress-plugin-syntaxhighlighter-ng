@@ -24,7 +24,11 @@
 
 
 
-function wrap_pre_tags(used_languages) {
+function wrap_pre_tags(used_languages, used_plugins) {
+  
+  // convert used_plugins array to a space seperated string
+  var used_plugins = used_plugins.join(' ');
+  alert(used_plugins); 
   // iterate through all used_languages
   for (let iUl = 0;iUl < used_languages.length; iUl++)
   {
