@@ -34,13 +34,12 @@ function plugin_syntaxhighlighter_add($lang=null) {
 	
 	$pdir=plugin_geturl('syntaxhighlighter');
 
-    // create array containing the used languages
+	// create array containing the used languages
 		$languages[] = "{$lang}";
-    // remove unique
+	// remove unique
 		$languages = array_unique($languages);
 		
-  return $languages;
-
+	return $languages;
 }
 
 
@@ -73,6 +72,7 @@ function plugin_syntaxhighlighter_foot() {
 	
 	$pdir=plugin_geturl('syntaxhighlighter');
 	// javascript part
+	
 echo <<<PRISMBOX
 	<!-- start of prism.js footer -->
 	
@@ -84,7 +84,7 @@ echo <<<PRISMBOX
 	<!-- call wrap_pre_tags() from syntaxhighlighter-ng.js -->
 	<script type="text/javascript">
 	  var used_languages = {$used_languages};
-	  var used_languages = {$used_plugins};
+	  var used_plugins = {$used_plugins};
 	  wrap_pre_tags(used_languages, used_plugins);
 	</script>
 	    
