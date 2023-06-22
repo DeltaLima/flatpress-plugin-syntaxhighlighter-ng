@@ -26,6 +26,12 @@
 
 function wrap_pre_tags(used_languages, enable_line_numbers) {
   
+  if ( enable_line_numbers == true )
+  {
+    enable_line_numbers = "line-numbers";
+  } else {
+    enable_line_numbers = "";
+  }
   // iterate through all used_languages
   for (let iUl = 0;iUl < used_languages.length; iUl++)
   {
@@ -47,7 +53,7 @@ function wrap_pre_tags(used_languages, enable_line_numbers) {
       org_html = preElements[iEl].innerHTML;
       // put <code> tag with 'language-' class and plugin-classes
       // prism.js plugin around the <pre> content
-      new_html = "<code class=\"language-" + used_languages[iUl] + " " + used_plugins + "\">" + org_html + "</code>";
+      new_html = "<code class=\"language-" + used_languages[iUl] + " " + enable_line_numbers + "\">" + org_html + "</code>";
       // write back our new html and enjoy syntax highlightning :)
       preElements[iEl].innerHTML = new_html;
     }

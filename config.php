@@ -22,6 +22,6 @@ return [
         // change here
         'size' => 'small',
         'theme' => 'okaidia',
-        'line-numbers' => true,
+        'line-numbers' => 'true',
 ]
 ?>
