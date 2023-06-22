@@ -4,7 +4,7 @@
  *
  *        tiny: 21KB (Markup, HTML, XML, SVG, MathML, SSML, Atom, RSS, CSS, C-like, JavaScript)
  *
- *        small: 95KB (markup, css, clike, javascript, apacheconf, arduino, bash, basic, batch, 
+ *        small: 106KB (markup, css, clike, javascript, apacheconf, arduino, bash, basic, batch, 
  *                    bbcode, c, cpp, cmake, csv, diff, docker, git, go, http, ini, java, json,
  *                    log, makefile, markdown, markup-templating, nginx, pascal, perl, php,
  *                    powershell, python, ruby, shell-session, sql, typescript, vbnet,
