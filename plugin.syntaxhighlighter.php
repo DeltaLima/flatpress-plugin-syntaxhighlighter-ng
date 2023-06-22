@@ -51,7 +51,8 @@ function plugin_syntaxhighlighter_head() {
 echo <<<PRISMJS
 	<!-- start of prism.js header -->
 		
-  <link rel="stylesheet" type="text/css" href="{$pdir}res/prism-{$config['theme']}.css" />
+	<link rel="stylesheet" type="text/css" href="{$pdir}res/prism.plugins.css" />
+	<link rel="stylesheet" type="text/css" href="{$pdir}res/prism-{$config['theme']}.css" />
 
 	<!-- end of prism.js header -->
 PRISMJS;
@@ -63,27 +64,27 @@ add_action('wp_head', 'plugin_syntaxhighlighter_head');
 
 function plugin_syntaxhighlighter_foot() {
 
-  $config = include('config.php');
-  // convert the returned array into a json one, to have an easier time
-  // giving it to the javascript below
-  $used_languages = json_encode(plugin_syntaxhighlighter_add());
-  
-  $pdir=plugin_geturl('syntaxhighlighter');
-  // javascript part
-  echo <<<PRISMBOX
-    <!-- start of prism.js footer -->
-    
-    <script type="text/javascript" src="{$pdir}res/prism.{$config['size']}.js"></script>
-    
-    <!-- include wrapping-function to wrap content of pre html-tags into code-tags, as said in https://prismjs.com/index.html#basic-usage -->
-    <script type="text/javascript" src="{$pdir}res/syntaxhighlighter-ng.js"></script>
-
-    <!-- call wrap_pre_tags() from syntaxhighlighter-ng.js -->
-    <script type="text/javascript">
-      var used_languages = {$used_languages};
-      wrap_pre_tags(used_languages);
-    </script>
+	$config = include('config.php');
+	// convert the returned array into a json one, to have an easier time
+	// giving it to the javascript below
+	$used_languages = json_encode(plugin_syntaxhighlighter_add());
 	
+	$pdir=plugin_geturl('syntaxhighlighter');
+	// javascript part
+echo <<<PRISMBOX
+	<!-- start of prism.js footer -->
+	
+	<script type="text/javascript" src="{$pdir}res/prism.{$config['size']}.js"></script>
+	
+	<!-- include wrapping-function to wrap content of pre html-tags into code-tags, as said in https://prismjs.com/index.html#basic-usage -->
+	<script type="text/javascript" src="{$pdir}res/syntaxhighlighter-ng.js"></script>
+	
+	<!-- call wrap_pre_tags() from syntaxhighlighter-ng.js -->
+	<script type="text/javascript">
+	  var used_languages = {$used_languages};
+	  wrap_pre_tags(used_languages);
+	</script>
+	    
 	<!-- end of prism.js footer -->
 PRISMBOX;
 }
