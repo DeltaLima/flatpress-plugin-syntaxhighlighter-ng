@@ -24,7 +24,7 @@
 
 
 
-function wrap_pre_tags(used_languages, used_plugins) {
+function wrap_pre_tags(used_languages, enable_line_numbers) {
   
   // convert used_plugins array to a space seperated string
   var used_plugins = used_plugins.join(' ');
