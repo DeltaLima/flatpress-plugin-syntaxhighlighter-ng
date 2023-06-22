@@ -28,7 +28,7 @@ function wrap_pre_tags(used_languages, used_plugins) {
   
   // convert used_plugins array to a space seperated string
   var used_plugins = used_plugins.join(' ');
-  alert(used_plugins); 
+
   // iterate through all used_languages
   for (let iUl = 0;iUl < used_languages.length; iUl++)
   {
@@ -48,9 +48,9 @@ function wrap_pre_tags(used_languages, used_plugins) {
     {
       // put the content of <pre> tag into org_html
       org_html = preElements[iEl].innerHTML;
-      // put <code> tag with 'language-' class and class for 'line-numbers'
+      // put <code> tag with 'language-' class and plugin-classes
       // prism.js plugin around the <pre> content
-      new_html = "<code class=\"line-numbers language-" + used_languages[iUl] + "\">" + org_html + "</code>";
+      new_html = "<code class=\"language-" + used_languages[iUl] + " " + used_plugins + "\">" + org_html + "</code>";
       // write back our new html and enjoy syntax highlightning :)
       preElements[iEl].innerHTML = new_html;
     }
